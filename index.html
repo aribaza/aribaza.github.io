@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ariadna Bazaga Pozas - CV</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  
+</head>
+<body>
+  <!-- Full-page introductory section -->
+  <div class="intro">
+    <h1>Hi, I'm Ari.</h1>
+    <h1>Welcome to my CV</h1>
+    <div class="scroll-indicator">
+      <span>Scroll Down</span>
+      <div class="arrow"></div>
+    </div>
+  </div>
+  
+
+  <!-- Scroll-down CV section -->
+  <div class="cv-section">
+    <div class="cv-container">
+      <!-- First image -->
+      <img id="cvImage" class="cv-image" src="crumpled.png" alt="CV Image">
+      <!-- First hidden image -->
+      <img id="secondImageLeft" class="content-image" src="crumpled.png" alt="Second Image Left">
+      <!-- Second hidden image that will move to the right -->
+      <img id="secondImageRight" class="content-image" src="crumpled.png" alt="Second Image Right">
+      <!-- New images for the top left, bottom left, top right, and bottom right -->
+      <img id="topLeftImage" class="content-image" src="crumpled.png" alt="Top Left Image">
+      <img id="bottomLeftImage" class="content-image" src="crumpled.png" alt="Bottom Left Image">
+      <img id="topRightImage" class="content-image" src="crumpled.png" alt="Top Right Image">
+      <img id="bottomRightImage" class="content-image" src="crumpled.png" alt="Bottom Right Image">
+    </div>
+  </div>
+  
+</body>
+
+<script>
+  const cvImage = document.getElementById("cvImage");
+  const secondImageLeft = document.getElementById("secondImageLeft");
+  const secondImageRight = document.getElementById("secondImageRight");
+  const topLeftImage = document.getElementById("topLeftImage");
+  const bottomLeftImage = document.getElementById("bottomLeftImage");
+  const topRightImage = document.getElementById("topRightImage");
+  const bottomRightImage = document.getElementById("bottomRightImage");
+
+  let clickCount = 0; // Track the number of clicks
+
+  cvImage.addEventListener("click", function handleClick() {
+  clickCount++;
+
+  // First click: transition to the larger image
+  if (clickCount === 1) {
+    cvImage.style.opacity = "0"; // Fade out the original image
+    setTimeout(() => {
+      cvImage.src = "Academic CV crumpled.png"; // Change to the new image
+      cvImage.classList.add("large"); // Make the new image larger
+      cvImage.style.opacity = "1"; // Fade the new image in
+    }, 500); // Wait for the fade-out transition
+
+  // Second click: reveal all hidden images at the same time
+  } else if (clickCount === 2) {
+    secondImageLeft.classList.add("show-left");
+    secondImageRight.classList.add("show-right");
+    topLeftImage.classList.add("show-top-left");
+    bottomLeftImage.classList.add("show-bottom-left");
+    topRightImage.classList.add("show-top-right");
+    bottomRightImage.classList.add("show-bottom-right");
+  }
+  });
+</script>
+
+
+
+
+
+
+
+</html>

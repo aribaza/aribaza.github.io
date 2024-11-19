@@ -1,0 +1,258 @@
+/* Reset and general styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Playfair Display", Times, serif;
+  overflow-x: hidden;
+}
+
+/* Intro section styles */
+.intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh; /* Full screen height */
+  background-color: #fff;
+  color: #000;
+}
+
+.intro h1 {
+  font-family: "Playfair Display", Times, serif;
+  font-size: 8rem;
+  text-align: center;
+  padding: 0 20px; /* For smaller screens */
+}
+
+/* CV section styles */
+.cv-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full screen height */
+  background-color: #f9f9f9;
+  position: relative; /* Needed for absolute positioning of the second image */
+}
+
+.cv-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Full width for better alignment */
+  position: relative; /* To contain the absolutely positioned second image */
+}
+
+.cv-image {
+  width: 25%; /* Adjust the size of the original image */
+  max-width: 300px; /* Max width for the original image */
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.2)); /* Shadow effect */
+  transition: transform 0.3s ease, filter 0.3s ease, opacity 0.5s ease; /* Smooth transitions */
+  border-radius: 8px;
+  position: absolute; /* Keeps the first image in normal flow */
+}
+
+.content-image {
+  width: 12.5%; /* Smaller size for the second image */
+  max-width: 150px;
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.2));
+  transition: transform 0.3s ease, filter 0.3s ease;
+  border-radius: 8px;
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 10; /* Ensure it is above other elements */
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: auto; /* Initially disable hover interaction */
+}
+
+.content-image.show-left,
+.content-image.show-right,
+.content-image.show-top-left,
+.content-image.show-bottom-left,
+.content-image.show-top-right,
+.content-image.show-bottom-right {
+  visibility: visible;
+  opacity: 1; /* Make the image fully visible */
+  pointer-events: auto; /* Enable hover interaction when shown */
+}
+
+.content-image:hover {
+  transform: scale(1.5); /* Enlarged size on hover */
+  filter: drop-shadow(8px 8px 15px rgba(0, 0, 0, 0.3)); /* Enhanced shadow */
+  transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transitions */
+}
+
+
+/* Animation for the first hidden image when it becomes visible (left direction) */
+@keyframes travelToPositionLeft {
+  0% {
+    transform: translate(-50%, -50%); /* Start from the center */
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-400%, -50%); /* Move to the left */
+    opacity: 1;
+  }
+}
+
+/* Animation for the second hidden image when it becomes visible (right direction) */
+@keyframes travelToPositionRight {
+  0% {
+    transform: translate(-50%, -50%); /* Start from the center */
+    opacity: 0;
+  }
+  100% {
+    transform: translate(300%, -50%); /* Move to the right */
+    opacity: 1;
+  }
+}
+
+/* Animation for the top-left direction */
+@keyframes travelToPositionTopLeft {
+  0% {
+    transform: translate(-50%, -50%); /* Start from the center */
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-300%, -200%); /* Move to the top left */
+    opacity: 1;
+  }
+}
+
+/* Animation for the bottom-left direction */
+@keyframes travelToPositionBottomLeft {
+  0% {
+    transform: translate(-50%, -50%); /* Start from the center */
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-300%, 150%); /* Move to the bottom left */
+    opacity: 1;
+  }
+}
+
+/* Animation for the top-right direction */
+@keyframes travelToPositionTopRight {
+  0% {
+    transform: translate(-50%, -50%); /* Start from the center */
+    opacity: 0;
+  }
+  100% {
+    transform: translate(200%, -200%); /* Move to the top right */
+    opacity: 1;
+  }
+}
+
+/* Animation for the bottom-right direction */
+@keyframes travelToPositionBottomRight {
+  0% {
+    transform: translate(-50%, -50%); /* Start from the center */
+    opacity: 0;
+  }
+  100% {
+    transform: translate(200%, 150%); /* Move to the bottom right */
+    opacity: 1;
+  }
+}
+
+.cv-image.large {
+  transform: scale(1.4); /* Make the new image slightly larger */
+}
+
+.cv-image:hover {
+  transform: scale(1.9);
+  filter: drop-shadow(8px 8px 15px rgba(0, 0, 0, 0.3)); /* Enhanced shadow on hover */
+}
+
+
+/* These classes are applied when the corresponding images are revealed */
+.content-image.show-left {
+  visibility: visible;
+  animation: travelToPositionLeft 0.8s forwards;
+}
+
+.content-image.show-right {
+  visibility: visible;
+  animation: travelToPositionRight 0.8s forwards;
+}
+
+.content-image.show-top-left {
+  visibility: visible;
+  animation: travelToPositionTopLeft 0.8s forwards;
+}
+
+.content-image.show-bottom-left {
+  visibility: visible;
+  animation: travelToPositionBottomLeft 0.8s forwards;
+}
+
+.content-image.show-top-right {
+  visibility: visible;
+  animation: travelToPositionTopRight 0.8s forwards;
+}
+
+.content-image.show-bottom-right {
+  visibility: visible;
+  animation: travelToPositionBottomRight 0.8s forwards;
+}
+
+/* Class to disable hover effect */
+.cv-image.no-hover {
+  transform: scale(1.3) !important; /* Keep it enlarged */
+  filter: drop-shadow(8px 8px 15px rgba(0, 0, 0, 0.3)) !important; /* Keep the shadow consistent */
+  pointer-events: auto; /* Disable interactions like hover */
+  transition: none; /* Remove hover transitions */
+}
+
+/* Scroll Indicator Styles */
+.scroll-indicator {
+  position: absolute;
+  bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1rem;
+  font-family: "Playfair Display", Times, serif;
+  color: #666;
+  opacity: 0.8;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.scroll-indicator span {
+  margin-bottom: -7px;
+}
+
+.arrow {
+  width: 15px;
+  height: 15px;
+  border: solid #666;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  animation: bounce 1.5s infinite;
+}
+
+/* Arrow Animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0) rotate(45deg);
+  }
+  50% {
+    transform: translateY(10px) rotate(45deg);
+  }
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.8;
+  }
+}
