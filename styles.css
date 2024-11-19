@@ -86,7 +86,26 @@ body {
   transform: scale(1.5); /* Enlarged size on hover */
   filter: drop-shadow(8px 8px 15px rgba(0, 0, 0, 0.3)); /* Enhanced shadow */
   transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transitions */
+  animation: shake 0.5s ease-in-out;
+  transform-origin: center; /* Keeps the shake centered */
 }
+/* Shake Animation */
+@keyframes shake {
+  0%, 100% {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  25% {
+    transform: translate(-52%, -50%) rotate(-2deg);
+  }
+  50% {
+    transform: translate(-50%, -52%) rotate(2deg);
+  }
+  75% {
+    transform: translate(-48%, -50%) rotate(-1deg);
+  }
+}
+
+
 
 
 /* Animation for the first hidden image when it becomes visible (left direction) */
@@ -248,6 +267,30 @@ body {
 }
 
 /* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.8;
+  }
+}
+
+.reminder {
+  position: fixed;  /* Fixes the message at the bottom of the screen */
+  bottom: 20px;  /* Adjust the vertical position */
+  left: 50%;  /* Centers the text horizontally */
+  transform: translateX(-50%);  /* Centers perfectly */
+  font-size: 1rem;
+  font-family: "Playfair Display", Times, serif;
+  color: #666;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+  animation: fadeIn 2s ease-in-out;
+}
+
+
+/* Animation to fade in */
 @keyframes fadeIn {
   from {
     opacity: 0;

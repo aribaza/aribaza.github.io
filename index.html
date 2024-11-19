@@ -25,6 +25,7 @@
     <div class="cv-container">
       <!-- First image -->
       <img id="cvImage" class="cv-image" src="crumpled.png" alt="CV Image">
+      <div id="reminder" class="reminder">Click the paper to unravel</div>
       <!-- First hidden image -->
       <img id="secondImageLeft" class="content-image" src="crumpled.png" alt="Second Image Left">
       <!-- Second hidden image that will move to the right -->
@@ -48,22 +49,33 @@
   const topRightImage = document.getElementById("topRightImage");
   const bottomRightImage = document.getElementById("bottomRightImage");
 
+
   let clickCount = 0; // Track the number of clicks
 
-  cvImage.addEventListener("click", function handleClick() {
+cvImage.addEventListener("click", function handleClick() {
   clickCount++;
 
   // First click: transition to the larger image
   if (clickCount === 1) {
+    reminder.textContent = "Click the paper to find out more"; // Change reminder text
+    cvImage.style.transition = "opacity 0.5s ease";  // Apply smooth opacity transition
     cvImage.style.opacity = "0"; // Fade out the original image
-    setTimeout(() => {
+
+    // Wait for the fade-out to complete
+    cvImage.addEventListener("transitionend", function onFadeOut() {
       cvImage.src = "Academic CV crumpled.png"; // Change to the new image
       cvImage.classList.add("large"); // Make the new image larger
+      cvImage.style.transition = "opacity 0.5s ease";  // Set opacity transition for fade-in
       cvImage.style.opacity = "1"; // Fade the new image in
-    }, 500); // Wait for the fade-out transition
 
+      // Remove the event listener after it is used
+      cvImage.removeEventListener("transitionend", onFadeOut);
+    }, { once: true }); // Ensures that this listener runs only once
+  }
+  
   // Second click: reveal all hidden images at the same time
-  } else if (clickCount === 2) {
+  else if (clickCount === 2) {
+    reminder.style.display = "none"; // Hide the reminder after the second click
     secondImageLeft.classList.add("show-left");
     secondImageRight.classList.add("show-right");
     topLeftImage.classList.add("show-top-left");
@@ -71,7 +83,7 @@
     topRightImage.classList.add("show-top-right");
     bottomRightImage.classList.add("show-bottom-right");
   }
-  });
+});
 </script>
 
 
