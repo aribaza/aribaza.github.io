@@ -60,11 +60,11 @@ cvImage.addEventListener("click", function handleClick() {
     reminder.textContent = "Click the paper to find out more"; // Change reminder text
     cvImage.style.transition = "opacity 0.5s ease";  // Apply smooth opacity transition
     cvImage.style.opacity = "0"; // Fade out the original image
+    cvImage.src = "Academic CV crumpled.png"; // Change to the new image
 
     // Wait for the fade-out to complete
     cvImage.addEventListener("transitionend", function onFadeOut() {
-      cvImage.src = "Academic CV crumpled.png"; // Change to the new image
-      cvImage.classList.add("large"); // Make the new image larger
+      cvImage.classList.add("no-hover"); // Make the new image larger
       cvImage.style.transition = "opacity 0.5s ease";  // Set opacity transition for fade-in
       cvImage.style.opacity = "1"; // Fade the new image in
 

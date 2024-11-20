@@ -180,12 +180,9 @@ body {
   }
 }
 
-.cv-image.large {
-  transform: scale(1.4); /* Make the new image slightly larger */
-}
 
 .cv-image:hover {
-  transform: scale(1.9);
+  transform: scale(1.2);
   filter: drop-shadow(8px 8px 15px rgba(0, 0, 0, 0.3)); /* Enhanced shadow on hover */
 }
 
@@ -223,7 +220,7 @@ body {
 
 /* Class to disable hover effect */
 .cv-image.no-hover {
-  transform: scale(1.3) !important; /* Keep it enlarged */
+  transform: scale(1.9) !important ; /* Enlarged size */
   filter: drop-shadow(8px 8px 15px rgba(0, 0, 0, 0.3)) !important; /* Keep the shadow consistent */
   pointer-events: auto; /* Disable interactions like hover */
   transition: none; /* Remove hover transitions */
@@ -277,17 +274,16 @@ body {
 }
 
 .reminder {
-  position: fixed;  /* Fixes the message at the bottom of the screen */
-  bottom: 20px;  /* Adjust the vertical position */
-  left: 50%;  /* Centers the text horizontally */
-  transform: translateX(-50%);  /* Centers perfectly */
-  font-size: 1rem;
+  position: absolute; /* Position relative to .cv-section */
+  bottom: -400px; /* 20px from the bottom of the page */
+  left: 50%;
+  transform: translateX(-50%); /* Center horizontally */
   font-family: "Playfair Display", Times, serif;
-  color: #666;
-  opacity: 0.8;
-  transition: opacity 0.3s ease;
-  animation: fadeIn 2s ease-in-out;
+  font-size: 1.5rem; /* Adjust text size */
+  color: #666; /* Subtle color */
+  animation: fadeIn 2s ease-in-out; /* Optional fade-in effect */
 }
+
 
 
 /* Animation to fade in */
@@ -299,3 +295,5 @@ body {
     opacity: 0.8;
   }
 }
+
+
