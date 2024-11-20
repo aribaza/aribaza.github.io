@@ -56,7 +56,7 @@ body {
 }
 
 .content-image {
-  width: 12.5%; /* Smaller size for the second image */
+  width: 20%; /* Keep this value for size consistency */
   max-width: 150px;
   filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.2));
   transition: transform 0.3s ease, filter 0.3s ease;
@@ -67,7 +67,7 @@ body {
   z-index: 10; /* Ensure it is above other elements */
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1.2); /* Add a slight scaling factor here */
   pointer-events: auto; /* Initially disable hover interaction */
 }
 
@@ -151,7 +151,7 @@ body {
     opacity: 0;
   }
   100% {
-    transform: translate(-300%, 150%); /* Move to the bottom left */
+    transform: translate(-320%, 220%); /* Move to the bottom left */
     opacity: 1;
   }
 }
@@ -175,7 +175,7 @@ body {
     opacity: 0;
   }
   100% {
-    transform: translate(200%, 150%); /* Move to the bottom right */
+    transform: translate(200%, 90%); /* Move to the bottom right */
     opacity: 1;
   }
 }
@@ -275,11 +275,11 @@ body {
 
 .reminder {
   position: absolute; /* Position relative to .cv-section */
-  bottom: -400px; /* 20px from the bottom of the page */
+  bottom: -49vh; /* 20px from the bottom of the page */
   left: 50%;
   transform: translateX(-50%); /* Center horizontally */
   font-family: "Playfair Display", Times, serif;
-  font-size: 1.5rem; /* Adjust text size */
+  font-size: 0.5rem; /* Adjust text size */
   color: #666; /* Subtle color */
   animation: fadeIn 2s ease-in-out; /* Optional fade-in effect */
 }
