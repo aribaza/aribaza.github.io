@@ -77,6 +77,11 @@ header p {
   z-index: 10;
   transition: background-color 0.3s ease; /* Smooth transition */
 }
+@media (max-width: 600px) {
+  .sticky-nav{
+    margin: 0.7rem auto;
+  }
+}
 
 .sticky-nav.scrolled {
   background-color: rgba(255, 255, 255, 0.7); /* Slightly transparent */
@@ -118,9 +123,6 @@ nav a:hover::after {
 @media (max-width: 600px) {
   .work {
     grid-template-columns: 1fr; /* Ensures 1 item per row on smaller screens */
-  }
-  .sticky-nav{
-    margin: 1rem 0;
   }
 }
 
