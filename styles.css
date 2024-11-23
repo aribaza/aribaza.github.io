@@ -101,6 +101,7 @@ nav a {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   background-color: #fff;
   text-align: center;
+  color: #214f4b;
 }
 
 .work-title {
@@ -110,21 +111,7 @@ nav a {
   background-color: #f5f5f5;
 }
 
-.work-title.ai {
-  color: #9f5cca;
-}
 
-.work-title.articles {
-  color: #63b0c5;
-}
-
-.work-title.plugins {
-  color: #d38755;
-}
-
-.work-title.mobile {
-  color: #5fb26b;
-}
 
 /* Hover card styles */
 .hover-card {
