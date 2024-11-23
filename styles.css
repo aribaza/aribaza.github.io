@@ -272,5 +272,6 @@ footer {
 @media (max-width: 600px) {
   .text-with-image {
     flex-direction: column;
+    max-width: 50px;
   }
 }
