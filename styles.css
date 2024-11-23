@@ -4,6 +4,9 @@ body {
   margin: 0;
   padding: 0;
   color: #2b2b2b;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 
   /* Initial gradient setup */
   background: rgb(237,239,203);
@@ -48,7 +51,7 @@ header h2 {
   line-height: 1.2; /* Adjust default line spacing */
 }
 
-@media (max-width: 600px) {
+@media (max-width: 450px) {
   header h2 {
     font-size: 3rem; /* Reduce font size for smaller screens */
     line-height: 1.1; /* Adjust line spacing for smaller screens */
@@ -62,24 +65,25 @@ header p {
 }
 
 .sticky-nav {
+  align-self: center;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   border: 2px solid #214f4b;
   border-radius: 12px;
   background-color: rgba(255, 255, 255, 1); /* Fully opaque */
   padding: 0.5rem 1rem;
-  margin: 1.5rem auto;
   width: fit-content;
-  max-width: 375px;
   position: sticky;
   top: 0;
   z-index: 10;
   transition: background-color 0.3s ease; /* Smooth transition */
+  width: 80%;
+  max-width: 500px;
 }
-@media (max-width: 600px) {
-  .sticky-nav{
-    margin: 0.7rem auto;
+@media (max-width: 450px) {
+  .nav a {
+    font-size: 0.8 rem; /* Reduce font size for smaller screens */
   }
 }
 
@@ -88,7 +92,6 @@ header p {
 }
 
 nav a {
-  margin: 0 1rem;
   text-decoration: none;
   color: #5b716e;
   font-weight: bold;
@@ -120,7 +123,7 @@ nav a:hover::after {
   margin: auto;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 450px) {
   .work {
     grid-template-columns: 1fr; /* Ensures 1 item per row on smaller screens */
   }
@@ -274,7 +277,7 @@ footer {
   align-items: center;
   margin: 2rem 0;
 }
-@media (max-width: 600px) {
+@media (max-width: 450px) {
   .text-with-image {
     flex-direction: column;
   }
@@ -293,6 +296,7 @@ footer {
   flex-direction: column;
   align-items: center;
   padding: 2rem; /* Adjust the padding for the section */
+  min-width: 60%;
   max-width: 800px;
   margin: auto;
   background-color: rgba(255, 255, 255, 0.564);
