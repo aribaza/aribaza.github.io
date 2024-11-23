@@ -3,19 +3,90 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Skills</title>
+  <title>Skills - Ariadna Bazaga Pozas</title>
   <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400..800&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
   <header>
-    <h1>Skills</h1>
-    <p>Explore my technical and soft skills, ranging from programming languages and tools to problem-solving and teamwork abilities.</p>
+    <h2>Skills</h2>
+    <p>Explore the technical and personal skills I've developed throughout my academic and professional journey.</p>
   </header>
-  <main>
-    <section>
-      <h2>Core Competencies</h2>
-      <p>Placeholder content: This section will showcase your top skills and tools, such as languages, frameworks, and technologies.</p>
-    </section>
-  </main>
+
+  <nav class="sticky-nav">
+    <a href="index.html">Work</a>
+    <a href="about.html">About</a>
+    <a href="education.html">Education</a>
+    <a href="skills.html" class="active">Skills</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <section class="blog-content">
+    <div class="blog-post">
+      <h2>Technical Skills</h2>
+      <div class="skills-entry">
+        <h3>Programming Languages</h3>
+        <ul>
+          <li>Python</li>
+          <li>JavaScript</li>
+          <li>C++</li>
+          <li>HTML & CSS</li>
+        </ul>
+
+        <h3>Software & Tools</h3>
+        <ul>
+          <li>MATLAB</li>
+          <li>SolidWorks</li>
+          <li>AutoCAD</li>
+          <li>Git & GitHub</li>
+        </ul>
+
+        <h3>Engineering Skills</h3>
+        <ul>
+          <li>Biomedical Signal Processing</li>
+          <li>Biomechanics</li>
+          <li>Electronics and Circuit Design</li>
+          <li>Medical Device Development</li>
+        </ul>
+      </div>
+
+      <h2>Personal Skills</h2>
+      <div class="skills-entry">
+        <h3>Communication</h3>
+        <ul>
+          <li>Fluent in English, Spanish, and French</li>
+          <li>Experience with public speaking and presentations</li>
+        </ul>
+
+        <h3>Teamwork & Leadership</h3>
+        <ul>
+          <li>Collaborated in interdisciplinary teams for various projects</li>
+          <li>Leadership experience in organizing workshops and student events</li>
+        </ul>
+
+        <h3>Problem-Solving & Analytical Thinking</h3>
+        <ul>
+          <li>Proven ability to analyze complex problems and find innovative solutions</li>
+          <li>Skilled in research and data analysis</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Ariadna Bazaga Pozas. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.addEventListener('scroll', () => {
+      const nav = document.querySelector('.sticky-nav');
+      if (window.scrollY > 550) {
+        nav.classList.add('scrolled'); // Add transparency
+      } else {
+        nav.classList.remove('scrolled'); // Restore full opacity
+      }
+    });
+  </script>
 </body>
 </html>

@@ -4,12 +4,54 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400..800&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
-    <h1>Contact</h1>
-    <p>Get in touch! Feel free to reach out for collaborations or inquiries.</p>
+    <h2>Contact Me</h2>
+    <p>Feel free to reach out to me for any inquiries or collaborations!</p>
   </header>
+
+  <nav class="sticky-nav">
+    <a href="index.html">Work</a>
+    <a href="about.html">About</a>
+    <a href="education.html">Education</a>
+    <a href="skills.html">Skills</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <section class="contact-form-section">
+    <form action="" method="POST" class="contact-form">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="subject">Subject</label>
+      <input type="text" id="subject" name="subject" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit" class="submit-button">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Ariadna Bazaga Pozas. All rights reserved.</p>
+  </footer>
 </body>
+<script>
+  document.addEventListener('scroll', () => {
+    const nav = document.querySelector('.sticky-nav');
+    if (window.scrollY > 200) {
+      nav.classList.add('scrolled'); // Add transparency
+    } else {
+      nav.classList.remove('scrolled'); // Restore full opacity
+    }
+  });
+</script>
 </html>
