@@ -119,6 +119,9 @@ nav a:hover::after {
   .work {
     grid-template-columns: 1fr; /* Ensures 1 item per row on smaller screens */
   }
+  .sticky-nav{
+    margin: 1rem 0;
+  }
 }
 
 /* Work item styles */
@@ -278,6 +281,7 @@ footer {
     height: auto;
     margin: 0rem 0rem;
   }
+
 }
 
 /* Contact form section */
