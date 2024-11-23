@@ -71,7 +71,7 @@ header p {
   padding: 0.5rem 1rem;
   margin: 1.5rem auto;
   width: fit-content;
-  max-width: 300px;
+  max-width: 375px;
   position: sticky;
   top: 0;
   z-index: 10;
