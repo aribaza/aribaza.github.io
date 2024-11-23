@@ -12,19 +12,20 @@
     <h1>Hi, I'm Ari.</h1>
     <h2>Welcome to my website</h2>
     <p>I'm a postgrad at UCL studying Biomedical Engineering with a focus in full-stack web development and data science</p>
-    <nav>
-      <a href="/work">Work</a>
-      <a href="/about">About</a>
-      <a href="/play">Play</a>
-      <a href="/notes">Notes</a>
-      <a href="/contact">Contact</a>
-    </nav>
   </header>
+
+  <nav class="sticky-nav">
+    <a href="#work">Work</a>
+    <a href="about.html">About</a>
+    <a href="education.html">Education</a>
+    <a href="skills.html">Skills</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
   <section class="work" id="work">
     <div class="work-item">
       <div class="hover-card">
-        <img src="https://via.placeholder.com/300x200?text=Quantifying Innovation and Partnerships in Medical Technologies Through Patent AnalysisI" alt="Quantifying Innovation and Partnerships in Medical Technologies Through Patent Analysis" class="default-image">
+        <img src="https://via.placeholder.com/300x200?text=Quantifying Innovation and Partnerships in Medical Technologies Through Patent Analysis" alt="Quantifying Innovation and Partnerships in Medical Technologies Through Patent Analysis" class="default-image">
         <img src="https://via.placeholder.com/300x200?text=Quantifying Innovation and Partnerships in Medical Technologies Through Patent Analysis+Hover" alt="Quantifying Innovation and Partnerships in Medical Technologies Through Patent Analysis Hover" class="hover-image">
       </div>
       <div class="work-title ai">Quantifying Innovation and Partnerships in Medical Technologies Through Patent Analysis</div>
@@ -52,4 +53,14 @@
     </div>
   </section>
 </body>
+<script>
+  document.addEventListener('scroll', () => {
+  const nav = document.querySelector('.sticky-nav');
+  if (window.scrollY > 550) {
+    nav.classList.add('scrolled'); // Add transparency
+  } else {
+    nav.classList.remove('scrolled'); // Restore full opacity
+  }
+});
+</script>
 </html>

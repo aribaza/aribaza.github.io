@@ -30,13 +30,13 @@ header {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 4rem 1rem 2rem;
+  padding: 3rem 1rem 2rem;
   max-width: 1280px;
   margin: auto;
 }
 
 header h1 {
-  font-size: 7rem;
+  font-size: clamp(3rem, 10vw, 7rem);
   margin: 0;
   color: #214f4b;
 }
@@ -45,6 +45,14 @@ header h2 {
   font-size: 5rem;
   margin: 0;
   color: #346d68;
+  line-height: 1.2; /* Adjust default line spacing */
+}
+
+@media (max-width: 600px) {
+  header h2 {
+    font-size: 3rem; /* Reduce font size for smaller screens */
+    line-height: 1.1; /* Adjust line spacing for smaller screens */
+  }
 }
 
 header p {
@@ -53,19 +61,24 @@ header p {
   color: #5b716e;
 }
 
-/* Rounded rectangle for navigation with sticky positioning */
-nav {
-  display: inline-block; /* Keeps it as an inline element but allows for styling */
-  border: 2px solid #214f4b; /* Dark border for contrast */
-  border-radius: 12px; /* Rounded corners for the nav */
-  background-color: #ffffff; /* White background */
-  padding: 0.5rem 1rem; /* Padding inside the rounded rectangle */
-  margin-top: 1.5rem; /* Adds space between the header and nav */
-  
-  /* Make the navigation sticky */
+.sticky-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #214f4b;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 1); /* Fully opaque */
+  padding: 0.5rem 1rem;
+  margin: 1.5rem auto;
+  width: fit-content;
   position: sticky;
-  top: 0; /* Sticks the navigation at the top of the page */
-  z-index: 10; /* Ensures the nav stays on top of other content */
+  top: 0;
+  z-index: 10;
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.sticky-nav.scrolled {
+  background-color: rgba(255, 255, 255, 0.7); /* Slightly transparent */
 }
 
 nav a {
@@ -73,9 +86,22 @@ nav a {
   text-decoration: none;
   color: #5b716e;
   font-weight: bold;
-  position: sticky;
-  top: 0;
-  z-index: 11;
+  position: relative; /* Required for the underline effect */
+}
+
+nav a::after {
+  content: ''; /* Creates the underline */
+  position: absolute;
+  bottom: -2px; /* Position the underline just below the text */
+  left: 0;
+  width: 0; /* Initially hidden */
+  height: 2px;
+  background-color: #5b716e; /* Match the color of the text */
+  transition: width 0.3s ease; /* Smooth underline animation */
+}
+
+nav a:hover::after {
+  width: 100%; /* Full width when hovered */
 }
 
 /* Work section */
