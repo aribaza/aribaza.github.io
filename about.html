@@ -3,13 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About</title>
+  <title>About Me</title>
   <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400..800&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
-    <h1>About Me</h1>
-    <p>Learn more about who I am, my journey, and what drives me.</p>
+    <h2>About Me</h2>
+    <p>Welcome to my personal space, where I share my journey, experiences, and passion for biomedical engineering and technology!</p>
   </header>
+
+  <nav class="sticky-nav">
+    <a href="index.html">Work</a>
+    <a href="about.html">About</a>
+    <a href="education.html">Education</a>
+    <a href="skills.html">Skills</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <section class="blog-content">
+    <div class="blog-post">
+      <div class="text-with-image">
+        <img class="face" src="ari.png" alt="Ariadna Bazaga Pozas">
+        <div class="blog-post">
+          <h2>Background</h2>
+          <p>My name is Ariadna Bazaga Pozas, but I go by Ari. I am a fourth-year student in an integrated Master of Engineering (MEng) programme at UCL, specialising in Biomedical Engineering. My academic and professional interests lie at the intersection of healthcare, engineering, and technology. I am passionate about using innovative solutions, such as data science, machine learning, and full-stack web development, to improve medical outcomes and healthcare systems.</p>
+
+          <h2>My Path</h2>
+          <p>Growing up, I was always intrigued by how technology could solve complex problems, especially in the medical field. This fascination led me to pursue a degree in Biomedical Engineering, where I combine my technical skills with a deep interest in healthcare. At UCL, I am learning how to integrate engineering concepts with medical research, and I aspire to create tools that enhance patient care and streamline medical processes.</p>
+        </div>
+      </div>
+
+      <h2>Professional Interests</h2>
+      <ul>
+        <li>Full-stack web development: Developing scalable and user-centric web applications for healthcare and research.</li>
+        <li>Data science and AI: Leveraging data and machine learning to improve medical decision-making and healthcare outcomes.</li>
+        <li>Biomedical technologies: Innovating in medical devices, wearable technologies, and diagnostic tools.</li>
+        <li>Healthtech: Exploring ways to apply emerging technologies to improve healthcare accessibility, efficiency, and patient experience.</li>
+      </ul>
+
+      <h2>Leadership and Extracurriculars</h2>
+      <p>In addition to my academic pursuits, I actively engage in leadership roles and extracurricular activities. I am currently serving as an Academic Cohort Representative at UCL, where I represent the student body and collaborate with faculty to improve the educational experience. I also hold the position of Event Manager at the UCL Medical Physics and Biomedical Engineering Society, where I help organize events such as networking socials, academic panels, and lab tours.</p>
+
+      <h2>Goals and Vision</h2>
+      <p>My long-term goal is to integrate my engineering and biomedical skills to develop healthcare solutions that directly impact patients' lives. I am particularly interested in how emerging technologies can bridge gaps in healthcare systems, providing better and more accessible care for all. I aim to combine my technical expertise with my leadership experiences to drive innovation in healthtech and biomedical engineering.</p>
+
+      <h2>Personal Life</h2>
+      <p>Outside of my academic and professional endeavors, I enjoy a variety of hobbies, from scuba diving to academic writing. I also speak multiple languages, including Spanish and English, and have received certifications in public speaking and communication. Volunteering is another important aspect of my life, and I enjoy contributing to community-based projects that aim to make a positive social impact.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Ariadna Bazaga Pozas. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.addEventListener('scroll', () => {
+      const nav = document.querySelector('.sticky-nav');
+      if (window.scrollY > 550) {
+        nav.classList.add('scrolled'); // Add transparency
+      } else {
+        nav.classList.remove('scrolled'); // Restore full opacity
+      }
+    });
+  </script>
 </body>
 </html>

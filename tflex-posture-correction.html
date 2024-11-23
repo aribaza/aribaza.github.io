@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>T-flex: Wearable Posture Correction System</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400..800&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h2>T-flex: Wearable Posture Correction System</h2>
+    <p>A smart wearable designed to improve posture through real-time feedback and tracking.</p>
+  </header>
+
+  <nav class="sticky-nav">
+    <a href="index.html">Work</a>
+    <a href="about.html">About</a>
+    <a href="education.html">Education</a>
+    <a href="skills.html">Skills</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <section class="blog-content">
+    <div class="blog-post">
+      <h2>Overview</h2>
+      <p>T-flex is a wearable posture correction system designed to detect poor posture and provide real-time feedback to the user. The system aims to reduce the risk of posture-related health issues, such as back pain and muscle strain, by encouraging healthier posture habits.</p>
+
+      <h2>The Approach</h2>
+      <p>The wearable device uses sensors to monitor the user's posture throughout the day. When it detects poor posture, it provides gentle feedback, such as vibration, to remind the user to correct their posture. The system is paired with a mobile app for tracking and providing personalized posture improvement suggestions.</p>
+
+      <h2>Key Features</h2>
+      <ul>
+        <li>Real-time posture tracking with a wearable device.</li>
+        <li>Feedback through vibrations when poor posture is detected.</li>
+        <li>Mobile app integration for tracking posture improvement over time.</li>
+        <li>Customizable feedback sensitivity and reminder settings based on user preferences.</li>
+      </ul>
+
+      <h2>Technologies Used</h2>
+      <ul>
+        <li>Embedded sensors for posture detection.</li>
+        <li>Bluetooth integration for communication between the wearable and the mobile app.</li>
+        <li>Mobile app developed using React Native for cross-platform compatibility (iOS and Android).</li>
+        <li>Backend powered by Firebase for real-time data syncing and user progress tracking.</li>
+      </ul>
+
+      <h2>Conclusion</h2>
+      <p>The T-flex posture correction system provides an innovative solution for improving posture and reducing the risk of associated health problems. Its combination of wearable technology, real-time feedback, and mobile app integration offers a comprehensive approach to maintaining good posture throughout the day.</p>
+    </div>
+
+    <div class="other-projects">
+      <h3>Other Projects</h3>
+      <ul>
+        <li><a href="quantifying-innovation.html">Quantifying Innovation and Partnerships in Medical Technologies</a></li>
+        <li><a href="population-distribution.html">Population Distribution App</a></li>
+        <li><a href="pillnet-identification.html">PillNet: Accessible Neural Network-Based Pill Identification App</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Ari. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.addEventListener('scroll', () => {
+      const nav = document.querySelector('.sticky-nav');
+      if (window.scrollY > 550) {
+        nav.classList.add('scrolled'); // Add transparency
+      } else {
+        nav.classList.remove('scrolled'); // Restore full opacity
+      }
+    });
+  </script>
+</body>
+</html>

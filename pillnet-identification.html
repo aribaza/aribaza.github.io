@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PillNet: Accessible Neural Network-Based Pill Identification App</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400..800&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h2>PillNet: Accessible Neural Network-Based Pill Identification App</h2>
+    <p>Empowering users to identify pills using a neural network-based mobile app for accurate, fast, and accessible identification.</p>
+  </header>
+
+  <nav class="sticky-nav">
+    <a href="index.html">Work</a>
+    <a href="about.html">About</a>
+    <a href="education.html">Education</a>
+    <a href="skills.html">Skills</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <section class="blog-content">
+    <div class="blog-post">
+      <h2>Overview</h2>
+      <p>PillNet is an innovative mobile app that leverages a neural network to identify pills based on image input. The app allows users to take a picture of a pill, and within seconds, it provides a possible identification, including the pill's name, dosage, and manufacturer. This tool is especially beneficial for people with limited access to healthcare professionals and can help reduce medication errors.</p>
+
+      <h2>The Approach</h2>
+      <p>The app uses deep learning techniques to train a neural network model that recognizes pills from a large database of images. The model is optimized to handle different shapes, sizes, and colors of pills. The app integrates a simple, user-friendly interface that makes it easy for anyone to take a photo and receive instant identification results.</p>
+
+      <h2>Key Features</h2>
+      <ul>
+        <li>Accurate pill identification based on a photo, using a trained neural network model.</li>
+        <li>Real-time feedback on pill identification results, including the name, dosage, and manufacturer.</li>
+        <li>Integration with a large, continuously updated pill database.</li>
+        <li>Accessibility features, including voice feedback and large text for those with visual impairments.</li>
+      </ul>
+
+      <h2>Technologies Used</h2>
+      <ul>
+        <li>Deep learning for image recognition, using convolutional neural networks (CNNs).</li>
+        <li>Mobile app developed with React Native for cross-platform compatibility (iOS and Android).</li>
+        <li>Backend powered by Firebase to store pill data and user interactions.</li>
+        <li>Cloud storage for storing high-quality images of pills used for training the neural network.</li>
+      </ul>
+
+      <h2>Conclusion</h2>
+      <p>PillNet aims to make pill identification quick and accessible to everyone, helping users identify their medication accurately and confidently. By integrating AI into healthcare applications, PillNet plays a critical role in empowering individuals to take control of their health while ensuring that they avoid potential medication errors.</p>
+    </div>
+
+    <div class="other-projects">
+      <h3>Other Projects</h3>
+      <ul>
+        <li><a href="quantifying-innovation.html">Quantifying Innovation and Partnerships in Medical Technologies</a></li>
+        <li><a href="population-distribution.html">Population Distribution App</a></li>
+        <li><a href="tflex-posture-correction.html">T-flex: Wearable Posture Correction System</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Ari. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.addEventListener('scroll', () => {
+      const nav = document.querySelector('.sticky-nav');
+      if (window.scrollY > 550) {
+        nav.classList.add('scrolled'); // Add transparency
+      } else {
+        nav.classList.remove('scrolled'); // Restore full opacity
+      }
+    });
+  </script>
+</body>
+</html>
