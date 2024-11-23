@@ -274,7 +274,7 @@ footer {
     flex-direction: column;
   }
   .face{
-    max-width: 80vw;
+    max-width: 160vw;
     height: auto;
     margin: 0rem 0rem;
   }
