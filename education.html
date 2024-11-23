@@ -3,19 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Education</title>
+  <title>Education - Ariadna Bazaga Pozas</title>
   <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400..800&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
-    <h1>Education</h1>
-    <p>Learn more about my academic background and the journey that shaped my expertise in Biomedical Engineering, web development, and data science.</p>
+    <h2>Education</h2>
+    <p>Discover my academic journey, from my GCSEs to my current studies in Biomedical Engineering at UCL!</p>
   </header>
-  <main>
-    <section>
-      <h2>My Academic Journey</h2>
-      <p>Placeholder content: Details about your degrees, certifications, and academic achievements will go here.</p>
-    </section>
-  </main>
+
+  <nav class="sticky-nav">
+    <a href="index.html">Work</a>
+    <a href="about.html">About</a>
+    <a href="education.html" class="active">Education</a>
+    <a href="skills.html">Skills</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <section class="blog-content">
+    <div class="blog-post">
+      <h2>UCL (University College London)</h2>
+      <div class="education-entry">
+        <p><strong>Master of Engineering (MEng), Biomedical Engineering</strong></p>
+        <p><em>September 2021 – June 2025</em></p>
+        <p>London, England, United Kingdom</p>
+      </div>
+
+      <h2>Exeter Maths School</h2>
+      <div class="education-entry">
+        <p><strong>A-Levels: Mathematics, Further Mathematics, Physics</strong></p>
+        <p><em>September 2019 – June 2021</em></p>
+        <p>Grade: A*, A*, A</p>
+        <p>Activities and Societies: ESB English Speaking Level 6 Qualification, British Sign Language Classes</p>
+      </div>
+
+      <h2>Exmouth Community College</h2>
+      <div class="education-entry">
+        <p><strong>GCSEs</strong></p>
+        <p><em>September 2014 – June 2019</em></p>
+        <p>Exmouth, Devon, United Kingdom</p>
+        <p><strong>Results:</strong></p>
+        <ul>
+          <li>9 in Mathematics</li>
+          <li>9 in Physics</li>
+          <li>9 in Biology </li>
+          <li>9 in Chemistry </li>
+          <li>9 in French </li>
+          <li>9 in Spanish</li>
+          <li>8 in Computer Science</li>
+          <li>8 in English Literature</li>
+          <li>8 in English Language</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Ariadna Bazaga Pozas. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.addEventListener('scroll', () => {
+      const nav = document.querySelector('.sticky-nav');
+      if (window.scrollY > 550) {
+        nav.classList.add('scrolled'); // Add transparency
+      } else {
+        nav.classList.remove('scrolled'); // Restore full opacity
+      }
+    });
+  </script>
 </body>
 </html>
