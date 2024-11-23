@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ariadna Bazaga Pozas - CV</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Full-page introductory section -->
+  <div class="intro">
+    <h1>Hi, I'm Ari.</h1>
+    <h1>Welcome to my CV</h1>
+    <div class="scroll-indicator">
+      <span>Scroll Down</span>
+      <div class="arrow"></div>
+    </div>
+  </div>
+  
+
+  <!-- Scroll-down CV section -->
+  <div class="cv-section">
+    <div class="cv-container">
+      <!-- First image -->
+      <img id="cvImage" class="cv-image" src="crumpled.png" alt="CV Image">
+      <div id="reminder" class="reminder">Click the paper to unravel</div>
+      <!-- First hidden image -->
+       <figure>
+      <img id="secondImageLeft" class="content-image" src="education.png" alt="Second Image Left">
+      <figcaption>Your label goes here</figcaption>
+       </figure>
+      <!-- Second hidden image that will move to the right -->
+      <img id="secondImageRight" class="content-image" src="experience.png" alt="Second Image Right">
+      <!-- New images for the top left, bottom left, top right, and bottom right -->
+      <img id="topLeftImage" class="content-image" src="pillnet.png" alt="Top Left Image">
+      <img id="bottomLeftImage" class="content-image" src="patents.png" alt="Bottom Left Image">
+      <img id="topRightImage" class="content-image" src="population.png" alt="Top Right Image">
+      <img id="bottomRightImage" class="content-image" src="posture.png" alt="Bottom Right Image">
+    </div>
+  </div>
+
+  <map name="cv">
+    <area shape="rect" coords="0,40,2479,100" alt="Education" href="javascript:void(0);" id="educationArea">
+    <area shape="rect" coords="0,100,2479,190" alt="Experience" href="javascript:void(0);" id="experienceArea">
+    <area shape="rect" coords="0,200,2479,240" alt="Patents" href="javascript:void(0);" id="patentsArea">
+    <area shape="rect" coords="0,240,2479,273" alt="Population Distribution" href="javascript:void(0);" id="popdistributionArea">
+    <area shape="rect" coords="0,273,2479,307" alt="T-flex device" href="javascript:void(0);" id="tflexArea">
+    <area shape="rect" coords="0,307,2479,340" alt="PillNet" href="javascript:void(0);" id="pillnetArea">
+  </map>
+
+<script>
+  const cvImage = document.getElementById("cvImage");
+  const secondImageLeft = document.getElementById("secondImageLeft");
+  const secondImageRight = document.getElementById("secondImageRight");
+  const topLeftImage = document.getElementById("topLeftImage");
+  const bottomLeftImage = document.getElementById("bottomLeftImage");
+  const topRightImage = document.getElementById("topRightImage");
+  const bottomRightImage = document.getElementById("bottomRightImage");
+  const reminder = document.getElementById("reminder"); // Added to manage the reminder
+
+  let clickCount = 0; // Track the number of clicks
+
+  cvImage.addEventListener("click", function handleClick() {
+    clickCount++;
+
+    // First click: transition to the larger image and activate image map
+    if (clickCount === 1) {
+      reminder.textContent = "Click on the sections to find out more"; // Change reminder text
+      cvImage.style.transition = "opacity 0.5s ease"; // Apply smooth opacity transition
+      cvImage.style.opacity = "0"; // Fade out the original image
+      cvImage.src = "Academic CV crumpled.png"; // Change to the new image
+      cvImage.setAttribute("usemap", "#cv"); // Activate the image map
+
+      // Wait for the fade-out to complete
+      cvImage.addEventListener(
+        "transitionend",
+        function onFadeOut() {
+          cvImage.classList.add("no-hover"); // Make the new image larger
+          cvImage.style.transition = "opacity 0.5s ease"; // Set opacity transition for fade-in
+          cvImage.style.opacity = "1"; // Fade the new image in
+
+          // Remove the event listener after it is used
+          cvImage.removeEventListener("transitionend", onFadeOut);
+        },
+        { once: true } // Ensures that this listener runs only once
+      );
+    }
+
+    // Second click: reveal all hidden images at the same time
+    else if (clickCount === 2) {
+      reminder.style.display = "none"; // Hide the reminder after the second click
+    }
+  });
+
+  // Handle clicking on the Education section
+  const educationArea = document.getElementById("educationArea");
+
+  educationArea.addEventListener("click", function () {
+    secondImageLeft.classList.add("show-left");
+  });
+  
+  const experienceArea = document.getElementById("experienceArea");
+
+  experienceArea.addEventListener("click", function () {
+    secondImageRight.classList.add("show-right");
+  });
+
+  const patentsArea = document.getElementById("patentsArea");
+
+  patentsArea.addEventListener("click", function () {
+    bottomLeftImage.classList.add("show-bottom-left");
+  });
+
+  const popdistributionArea = document.getElementById("popdistributionArea");
+
+  popdistributionArea.addEventListener("click", function () {
+    topRightImage.classList.add("show-top-right");
+  });
+
+  const tflexArea = document.getElementById("tflexArea");
+
+  tflexArea.addEventListener("click", function () {
+    bottomRightImage.classList.add("show-bottom-right");
+  });
+
+  const pillnetArea = document.getElementById("pillnetArea");
+
+  pillnetArea.addEventListener("click", function () {
+    topLeftImage.classList.add("show-top-left");
+  });
+
+
+</script>
+
+</body>
+</html>

@@ -1,299 +1,164 @@
-/* Reset and general styles */
-* {
+/* General styles */
+body {
+  font-family: "Eczar", serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  color: #2b2b2b;
+
+  /* Initial gradient setup */
+  background: rgb(237,239,203);
+  background: linear-gradient(-120deg, #ebd2ca, #f1cedb, #a1c7d4, #a5dace, #b7e6c6, #7cb88f, #6f838a, #c598a9);
+  background-size: 400% 400%;
+  animation: gradient 30s ease infinite;
 }
 
-body {
-  font-family: "Playfair Display", Times, serif;
-  overflow-x: hidden;
+@keyframes gradient {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
 }
 
-/* Intro section styles */
-.intro {
+header {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  height: 100vh; /* Full screen height */
-  background-color: #fff;
-  color: #000;
-}
-
-.intro h1 {
-  font-family: "Playfair Display", Times, serif;
-  font-size: 8rem;
   text-align: center;
-  padding: 0 20px; /* For smaller screens */
+  padding: 4rem 1rem 2rem;
+  max-width: 1280px;
+  margin: auto;
 }
 
-/* CV section styles */
-.cv-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; /* Full screen height */
-  background-color: #f9f9f9;
-  position: relative; /* Needed for absolute positioning of the second image */
+header h1 {
+  font-size: 7rem;
+  margin: 0;
+  color: #214f4b;
 }
 
-.cv-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%; /* Full width for better alignment */
-  position: relative; /* To contain the absolutely positioned second image */
+header h2 {
+  font-size: 5rem;
+  margin: 0;
+  color: #346d68;
 }
 
-.cv-image {
-  width: 25%; /* Adjust the size of the original image */
-  max-width: 300px; /* Max width for the original image */
-  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.2)); /* Shadow effect */
-  transition: transform 0.3s ease, filter 0.3s ease, opacity 0.5s ease; /* Smooth transitions */
-  border-radius: 8px;
-  position: absolute; /* Keeps the first image in normal flow */
+header p {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #5b716e;
 }
 
-.content-image {
-  width: 20%; /* Keep this value for size consistency */
-  max-width: 150px;
-  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.2));
-  transition: transform 0.3s ease, filter 0.3s ease;
-  border-radius: 8px;
-  position: absolute;
+/* Rounded rectangle for navigation with sticky positioning */
+nav {
+  display: inline-block; /* Keeps it as an inline element but allows for styling */
+  border: 2px solid #214f4b; /* Dark border for contrast */
+  border-radius: 12px; /* Rounded corners for the nav */
+  background-color: #ffffff; /* White background */
+  padding: 0.5rem 1rem; /* Padding inside the rounded rectangle */
+  margin-top: 1.5rem; /* Adds space between the header and nav */
+  
+  /* Make the navigation sticky */
+  position: sticky;
+  top: 0; /* Sticks the navigation at the top of the page */
+  z-index: 10; /* Ensures the nav stays on top of other content */
+}
+
+nav a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: #5b716e;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+  z-index: 11;
+}
+
+/* Work section */
+.work {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Explicitly limits the maximum number of items per row to 2 */
+  gap: 1.5rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+@media (max-width: 600px) {
+  .work {
+    grid-template-columns: 1fr; /* Ensures 1 item per row on smaller screens */
+  }
+}
+
+/* Work item styles */
+.work-item {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  text-align: center;
+}
+
+.work-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 1rem;
+  background-color: #f5f5f5;
+}
+
+.work-title.ai {
+  color: #9f5cca;
+}
+
+.work-title.articles {
+  color: #63b0c5;
+}
+
+.work-title.plugins {
+  color: #d38755;
+}
+
+.work-title.mobile {
+  color: #5fb26b;
+}
+
+/* Hover card styles */
+.hover-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.hover-card img {
+  width: 100%;
+  height: auto;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.default-image {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.hover-image {
   opacity: 0;
-  visibility: hidden;
-  z-index: 10; /* Ensure it is above other elements */
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%) scale(1.2); /* Add a slight scaling factor here */
-  pointer-events: auto; /* Initially disable hover interaction */
-}
-
-.content-image.show-left,
-.content-image.show-right,
-.content-image.show-top-left,
-.content-image.show-bottom-left,
-.content-image.show-top-right,
-.content-image.show-bottom-right {
-  visibility: visible;
-  opacity: 1; /* Make the image fully visible */
-  pointer-events: auto; /* Enable hover interaction when shown */
-}
-
-.content-image:hover {
-  transform: scale(1.5); /* Enlarged size on hover */
-  filter: drop-shadow(8px 8px 15px rgba(0, 0, 0, 0.3)); /* Enhanced shadow */
-  transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transitions */
-  animation: shake 0.5s ease-in-out;
-  transform-origin: center; /* Keeps the shake centered */
-}
-/* Shake Animation */
-@keyframes shake {
-  0%, 100% {
-    transform: translate(-50%, -50%) rotate(0);
-  }
-  25% {
-    transform: translate(-52%, -50%) rotate(-2deg);
-  }
-  50% {
-    transform: translate(-50%, -52%) rotate(2deg);
-  }
-  75% {
-    transform: translate(-48%, -50%) rotate(-1deg);
-  }
-}
-
-
-
-
-/* Animation for the first hidden image when it becomes visible (left direction) */
-@keyframes travelToPositionLeft {
-  0% {
-    transform: translate(-50%, -50%); /* Start from the center */
-    opacity: 0;
-  }
-  100% {
-    transform: translate(-400%, -50%); /* Move to the left */
-    opacity: 1;
-  }
-}
-
-/* Animation for the second hidden image when it becomes visible (right direction) */
-@keyframes travelToPositionRight {
-  0% {
-    transform: translate(-50%, -50%); /* Start from the center */
-    opacity: 0;
-  }
-  100% {
-    transform: translate(300%, -50%); /* Move to the right */
-    opacity: 1;
-  }
-}
-
-/* Animation for the top-left direction */
-@keyframes travelToPositionTopLeft {
-  0% {
-    transform: translate(-50%, -50%); /* Start from the center */
-    opacity: 0;
-  }
-  100% {
-    transform: translate(-300%, -200%); /* Move to the top left */
-    opacity: 1;
-  }
-}
-
-/* Animation for the bottom-left direction */
-@keyframes travelToPositionBottomLeft {
-  0% {
-    transform: translate(-50%, -50%); /* Start from the center */
-    opacity: 0;
-  }
-  100% {
-    transform: translate(-320%, 220%); /* Move to the bottom left */
-    opacity: 1;
-  }
-}
-
-/* Animation for the top-right direction */
-@keyframes travelToPositionTopRight {
-  0% {
-    transform: translate(-50%, -50%); /* Start from the center */
-    opacity: 0;
-  }
-  100% {
-    transform: translate(200%, -200%); /* Move to the top right */
-    opacity: 1;
-  }
-}
-
-/* Animation for the bottom-right direction */
-@keyframes travelToPositionBottomRight {
-  0% {
-    transform: translate(-50%, -50%); /* Start from the center */
-    opacity: 0;
-  }
-  100% {
-    transform: translate(200%, 90%); /* Move to the bottom right */
-    opacity: 1;
-  }
-}
-
-
-.cv-image:hover {
-  transform: scale(1.2);
-  filter: drop-shadow(8px 8px 15px rgba(0, 0, 0, 0.3)); /* Enhanced shadow on hover */
-}
-
-
-/* These classes are applied when the corresponding images are revealed */
-.content-image.show-left {
-  visibility: visible;
-  animation: travelToPositionLeft 0.8s forwards;
-}
-
-.content-image.show-right {
-  visibility: visible;
-  animation: travelToPositionRight 0.8s forwards;
-}
-
-.content-image.show-top-left {
-  visibility: visible;
-  animation: travelToPositionTopLeft 0.8s forwards;
-}
-
-.content-image.show-bottom-left {
-  visibility: visible;
-  animation: travelToPositionBottomLeft 0.8s forwards;
-}
-
-.content-image.show-top-right {
-  visibility: visible;
-  animation: travelToPositionTopRight 0.8s forwards;
-}
-
-.content-image.show-bottom-right {
-  visibility: visible;
-  animation: travelToPositionBottomRight 0.8s forwards;
-}
-
-/* Class to disable hover effect */
-.cv-image.no-hover {
-  transform: scale(1.9) !important ; /* Enlarged size */
-  filter: drop-shadow(8px 8px 15px rgba(0, 0, 0, 0.3)) !important; /* Keep the shadow consistent */
-  pointer-events: auto; /* Disable interactions like hover */
-  transition: none; /* Remove hover transitions */
-}
-
-/* Scroll Indicator Styles */
-.scroll-indicator {
+  transform: scale(1.1);
   position: absolute;
-  bottom: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 1rem;
-  font-family: "Playfair Display", Times, serif;
-  color: #666;
-  opacity: 0.8;
-  animation: fadeIn 2s ease-in-out;
+  top: 0;
+  left: 0;
 }
 
-.scroll-indicator span {
-  margin-bottom: -7px;
+.hover-card:hover .default-image {
+  opacity: 0;
+  transform: scale(1.1);
 }
 
-.arrow {
-  width: 15px;
-  height: 15px;
-  border: solid #666;
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
-  animation: bounce 1.5s infinite;
+.hover-card:hover .hover-image {
+  opacity: 1;
+  transform: scale(1);
 }
-
-/* Arrow Animation */
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0) rotate(45deg);
-  }
-  50% {
-    transform: translateY(10px) rotate(45deg);
-  }
-}
-
-/* Fade In Animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 0.8;
-  }
-}
-
-.reminder {
-  position: absolute; /* Position relative to .cv-section */
-  bottom: -49vh; /* 20px from the bottom of the page */
-  left: 50%;
-  transform: translateX(-50%); /* Center horizontally */
-  font-family: "Playfair Display", Times, serif;
-  font-size: 0.5rem; /* Adjust text size */
-  color: #666; /* Subtle color */
-  animation: fadeIn 2s ease-in-out; /* Optional fade-in effect */
-}
-
-
-
-/* Animation to fade in */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 0.8;
-  }
-}
-
-
