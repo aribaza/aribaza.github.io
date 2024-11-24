@@ -206,11 +206,19 @@ nav a.active::after {
   padding-right: 2rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  width: 100%;
+  width: 80%;
   max-width: 1000px;
   margin: auto;
   background-color: rgba(255, 255, 255, 0.564);
   border-radius: 12px;
+}
+@media (max-width: 450px) {
+  .blog-content {
+    width: 90%; /* Make it take up most of the screen width, but not full */
+    margin: auto; /* Center the box on the screen */
+    padding-left: 1vw;
+    padding-right: 1vw;
+  }
 }
 
 .blog-post h2 {
