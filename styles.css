@@ -345,4 +345,13 @@ footer {
   background-color: #346d68;
 }
 
+.form-message {
+  display: flex;
+  justify-content: center; /* Horizontal centering */
+  align-items: center; /* Vertical centering */
+  text-align: center;
+  font-size: 1rem; /* Optional: Set font size */
+  color: #214f4b; /* Set default color */
+}
+
 
