@@ -206,6 +206,7 @@ nav a.active::after {
   padding-right: 2rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
+  width: 100%;
   max-width: 1000px;
   margin: auto;
   background-color: rgba(255, 255, 255, 0.564);
@@ -291,7 +292,6 @@ footer {
     height: auto;
     margin: 0rem 0rem;
   }
-
 }
 
 /* Contact form section */
@@ -301,7 +301,6 @@ footer {
   flex-direction: column;
   width: 100%;
   max-width: 100%; /* Ensure the form takes full width of its container */
-  min-width: 60vw;
   gap: 1.5rem; /* Increased gap between fields */
 }
 
@@ -354,3 +353,38 @@ footer {
   color: #214f4b; /* Set default color */
 }
 
+.section-holder{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  align-self: center;
+  gap: 1rem;
+  width: 80%;
+}
+
+@media (max-width: 450px) {
+  .section-holder {
+    flex-direction: column; /* Stack items vertically */
+    width: auto; /* Allow natural width */
+    align-self: center; /* Center within parent */
+    align-items: center; /* Center the content horizontally */
+    margin: auto; /* Center on the screen */
+  }
+
+  .contact-content {
+    width: 90%; /* Make it take up most of the screen width, but not full */
+    margin: auto; /* Center the box on the screen */
+  }
+}
+
+.contact-content {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  height: auto;
+  width: 50%;
+  background-color: rgba(255, 255, 255, 0.564);
+  border-radius: 12px;
+}

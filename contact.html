@@ -21,24 +21,37 @@
     <a href="skills.html">Skills</a>
     <a href="contact.html" class="active">Contact</a>
   </nav>
+  <div class="section-holder">
+    <section class="contact-content">
+      <div class="blog-post">
+        <h2>Email</h2>
+        <div class="education-entry">
+          <p>If you want to get in touch, you can do so by emailing me at:</p>
+          <p><strong>aribazaga@gmail.com</strong></p>
+          <p>Or just fill out the contact form, and I'll get right back to you!</p>
+        </div>
+    </section>
+    <section class="contact-content">
+      <div class="blog-post">
+        <h2>Contact Form </h2>
+      </div>
+      <form id="contactForm" action="https://formspree.io/f/xzzbagaz" method="POST" class="contact-form">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
 
-  <section class="blog-content">
-    <form id="contactForm" action="https://formspree.io/f/xzzbagaz" method="POST" class="contact-form">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" required>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
 
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" required>
 
-      <label for="subject">Subject</label>
-      <input type="text" id="subject" name="subject" required>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
 
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
-
-      <button type="submit" class="submit-button">Send Message</button>
-    </form>
-  </section>
+        <button type="submit" class="submit-button">Send Message</button>
+      </form>
+    </section>
+  </div>
 
   <footer>
     <p>&copy; 2024 Ariadna Bazaga Pozas. All rights reserved.</p>
@@ -71,7 +84,7 @@
       alert('An error occurred. Please try again later.');
     }
   });
-  
+
   document.addEventListener('scroll', () => {
     const nav = document.querySelector('.sticky-nav');
     if (window.scrollY > 200) {
