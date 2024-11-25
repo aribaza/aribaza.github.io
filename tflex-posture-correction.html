@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>T-flex: Wearable Posture Correction System</title>
+  <title>T-flex: Weightlifting Posture Correction System</title>
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400..800&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link rel="shortcut icon" href="favicon.ico?" type="image/x-icon">
@@ -14,8 +14,8 @@
 </head>
 <body>
   <header>
-    <h2>T-flex: Wearable Posture Correction System</h2>
-    <p>A smart wearable designed to improve posture through real-time feedback and tracking.</p>
+    <h2>T-flex: Weightlifting Posture Correction System</h2>
+    <p>An innovative wearable designed to improve posture during weightlifting through real-time feedback and precise tracking.</p>
   </header>
 
   <nav class="sticky-nav">
@@ -29,29 +29,29 @@
   <section class="blog-content">
     <div class="blog-post">
       <h2>Overview</h2>
-      <p>T-flex is a wearable posture correction system designed to detect poor posture and provide real-time feedback to the user. The system aims to reduce the risk of posture-related health issues, such as back pain and muscle strain, by encouraging healthier posture habits.</p>
+      <p>The T-flex system is a wearable technology designed specifically for beginner weightlifters. It helps prevent posture-related injuries by providing instant feedback when posture is suboptimal. By promoting proper form, T-flex encourages safer weightlifting habits and reduces the risk of long-term back issues.</p>
 
-      <h2>The Approach</h2>
-      <p>The wearable device uses sensors to monitor the user's posture throughout the day. When it detects poor posture, it provides gentle feedback, such as vibration, to remind the user to correct their posture. The system is paired with a mobile app for tracking and providing personalized posture improvement suggestions.</p>
-
-      <h2>Key Features</h2>
+      <h2>Functionality and Design</h2>
+      <p>The T-flex monitors back curvature using a flex sensor calibrated to the user's ideal posture. When posture deviates, the device alerts the user with red lights and resumes green lights once the posture is corrected. Key features include:</p>
       <ul>
-        <li>Real-time posture tracking with a wearable device.</li>
-        <li>Feedback through vibrations when poor posture is detected.</li>
-        <li>Mobile app integration for tracking posture improvement over time.</li>
-        <li>Customizable feedback sensitivity and reminder settings based on user preferences.</li>
+        <li>Custom calibration for individual back curvature.</li>
+        <li>Real-time feedback via LED lights (red for poor posture, green for correct posture).</li>
+        <li>Integration into a long-sleeved gym shirt for comfort and practicality.</li>
+        <li>Lightweight design to avoid counterbalancing the lifted weight.</li>
       </ul>
+
+      <h2>Testing and Placement</h2>
+      <p>Testing revealed the lower back as the most effective sensor placement due to its high sensitivity to posture changes. The flex sensor accurately measures deviations, with a sensitivity of 90% and specificity of 100% based on initial trials.</p>
 
       <h2>Technologies Used</h2>
       <ul>
-        <li>Embedded sensors for posture detection.</li>
-        <li>Bluetooth integration for communication between the wearable and the mobile app.</li>
-        <li>Mobile app developed using React Native for cross-platform compatibility (iOS and Android).</li>
-        <li>Backend powered by Firebase for real-time data syncing and user progress tracking.</li>
+        <li>Adafruit Circuit Playground for programming and feedback control.</li>
+        <li>Flex sensor for posture detection with a resistance range of 60K to 110K Ohms.</li>
+        <li>3D-printed case for the circuit board, enhancing aesthetics and usability.</li>
       </ul>
 
-      <h2>Conclusion</h2>
-      <p>The T-flex posture correction system provides an innovative solution for improving posture and reducing the risk of associated health problems. Its combination of wearable technology, real-time feedback, and mobile app integration offers a comprehensive approach to maintaining good posture throughout the day.</p>
+      <h2>Future Enhancements</h2>
+      <p>Planned improvements include transitioning to a wireless design and developing a companion smartphone app. The app will provide additional functionalities such as tracking posture metrics and alerting users to both inward and outward posture deviations.</p>
     </div>
 
     <div class="other-projects">
@@ -65,16 +65,16 @@
   </section>
 
   <footer>
-    <p>&copy; 2024 Ari. All rights reserved.</p>
+    <p>&copy; 2024 Ariadna Bazaga Pozas. All rights reserved.</p>
   </footer>
 
   <script>
     document.addEventListener('scroll', () => {
       const nav = document.querySelector('.sticky-nav');
       if (window.scrollY > 550) {
-        nav.classList.add('scrolled'); // Add transparency
+        nav.classList.add('scrolled');
       } else {
-        nav.classList.remove('scrolled'); // Restore full opacity
+        nav.classList.remove('scrolled');
       }
     });
   </script>
