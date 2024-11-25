@@ -76,7 +76,7 @@ header p {
   width: fit-content;
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 20;
   transition: background-color 0.3s ease; /* Smooth transition */
   width: 80%;
   max-width: 500px;
@@ -148,6 +148,8 @@ nav a.active::after {
   font-size: 1.2rem;
   font-weight: bold;
   padding: 1rem;
+  background-color: #fff;
+  z-index: 2;
 }
 
 /* Ensure the entire work item is clickable */
@@ -166,7 +168,7 @@ nav a.active::after {
 /* Hover card styles */
 .hover-card {
   position: relative;
-  overflow: hidden;
+  overflow: hidden; /* Ensures child elements stay within the card's bounds */
   border-radius: 12px;
   cursor: pointer;
 }
@@ -174,31 +176,32 @@ nav a.active::after {
 .hover-card img {
   width: 100%;
   height: auto;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .default-image {
   opacity: 1;
   transform: scale(1);
+  z-index: 1;
 }
 
 .hover-image {
-  opacity: 0;
-  transform: scale(1.1);
   position: absolute;
-  top: 0;
-  left: 0;
+  scale: 0.9;
+  top: 40%; /* Aligns to the top of the container */
+  left: -40px; /* Aligns to the left of the container */
+  width: 100%; /* Matches the width of the parent */
+  height: 100%; /* Ensures full coverage */
+  z-index: 0;
+  transform: translate(0, 0); /* Initial position */
+  transition: transform 0.3s ease; /* Smooth movement on hover */
 }
 
-.hover-card:hover .default-image {
-  opacity: 0;
-  transform: scale(1.1);
-}
-
+/* Hover behavior */
 .hover-card:hover .hover-image {
-  opacity: 1;
-  transform: scale(1);
+  transform: translate(10px, -10px); /* Slight upward-left movement */
 }
+
 
 /* Blog content styles */
 .blog-content {
