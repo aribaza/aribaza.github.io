@@ -11,34 +11,61 @@
 <body>
   <header>
     <h2>Quantifying Innovation and Partnerships in Medical Technologies</h2>
-    <p>Exploring how patent analysis can quantify innovation and foster partnerships in the medical technology sector.</p>
+    <p>An exploration into patent data to measure innovation trends and foster partnerships within the medical technology sector.</p>
   </header>
 
   <nav class="sticky-nav">
-    <a href="index.html">Work</a>
+    <a href="index.html">Home</a>
     <a href="about.html">About</a>
-    <a href="education.html">Education</a>
-    <a href="skills.html">Skills</a>
+    <a href="features.html">Approach</a>
+    <a href="team.html">Team</a>
     <a href="contact.html">Contact</a>
   </nav>
 
   <section class="blog-content">
     <div class="blog-post">
       <h2>Overview</h2>
-      <p>This project focused on the quantitative analysis of innovation in the medical technology sector through patent data. By leveraging patent databases, we aimed to measure the frequency of innovations and the strength of collaborations within the field.</p>
+      <p>This project leverages patent analysis to uncover innovation trends and partnerships in medical technologies. Using data from the Derwent Innovation Patent Database, we explored patents classified under the A61N IP category, focusing on fields like electrotherapy and radiation therapy. Our findings highlight the dynamic interplay between innovation, collaboration, and geographical factors in shaping technological advancements.</p>
 
       <h2>The Approach</h2>
-      <p>We applied data science techniques to identify trends in patent filings, analyzing the relationship between innovation and partnerships. By visualizing patent data, we discovered key factors that drive collaboration between companies and institutions.</p>
+      <p>Our analysis employed various computational methods, including data mining, network analysis, and visualization techniques:</p>
+      <ul>
+        <li><strong>Data Selection:</strong> Patent data were filtered by IPC codes, priority years, and publication countries to focus on specific technological areas.</li>
+        <li><strong>Visualization:</strong> Techniques such as bar charts, world heatmaps, and node-edge diagrams helped visualize patent trends and relationships.</li>
+        <li><strong>Network Analysis:</strong> Metrics like eigenvector centrality and betweenness centrality were used to identify influential patents and partnerships.</li>
+      </ul>
+      <p>Tools like Python libraries (pandas, networkx, matplotlib) and Gephi facilitated in-depth data analysis and visual representation.</p>
 
       <h2>Key Findings</h2>
       <ul>
-        <li>Patent filings have significantly increased over the past decade, indicating a growing interest in medical innovations.</li>
-        <li>Strong partnerships between universities and private sector companies are driving the most impactful innovations.</li>
-        <li>Geographic distribution of patents highlights the concentration of innovation in specific regions.</li>
+        <li>Patent filings have steadily increased, reflecting growing innovation in medical devices.</li>
+        <li>Collaborations between universities and private companies drive impactful innovations.</li>
+        <li>Geographical hotspots for innovation include the United States, China, and Germany.</li>
+        <li>Fampat (patent family) analysis enhances understanding of technological influence compared to single patent analysis.</li>
       </ul>
+      
+
+
+      <h2>Publication Country Analysis</h2>
+      <p>Our study revealed significant contributions from countries like the United States, China, and Germany in publishing patents. A bar chart can highlight the top 25 countries for patent publications.</p>
+
+      <h2>Geographical Distribution</h2>
+      <p>The geographic spread of patents indicates areas of concentrated innovation. For example, the United States leads in electrotherapy patents, while emerging contributions are observed in China and South Korea. These trends can be effectively shown using a heatmap.</p>
+      <object type="image/svg+xml" data="assets\worldmapforwebsite.svg" class="interactive-map">
+        Your browser does not support SVG.
+      </object>
+
+
+      <h2>Network Analysis</h2>
+      <p>Node-edge diagrams reveal interconnections between patents and their cited families, showcasing knowledge flows within the network. Nodes with high centrality metrics represent pivotal patents driving technological advancements.</p>
+
+      <div class="side-to-side-images">
+        <img src="assets/DWPI_network_diagram.png">
+        <img src="assets/INPADOC_network_diagram.png">
+      </div>
 
       <h2>Conclusion</h2>
-      <p>This analysis provides valuable insights into the relationship between innovation and partnerships in medical technologies. It underscores the importance of collaboration in driving progress and the need for further investment in research and development.</p>
+      <p>This project underscores the value of patent analysis in understanding and fostering innovation. By mapping the technological landscape, we can identify collaboration opportunities, predict trends, and support strategic decision-making for stakeholders in the medical technology sector. The proposed visualizations serve as essential tools to communicate these insights effectively.</p>
     </div>
 
     <div class="other-projects">
@@ -52,17 +79,18 @@
   </section>
 
   <footer>
-    <p>&copy; 2024 Ari. All rights reserved.</p>
+    <p>&copy; 2024 Ariadna Bazaga Pozas. All rights reserved.</p>
   </footer>
-</body>
-<script>
+
+  <script>
     document.addEventListener('scroll', () => {
-    const nav = document.querySelector('.sticky-nav');
-    if (window.scrollY > 550) {
-      nav.classList.add('scrolled'); // Add transparency
-    } else {
-      nav.classList.remove('scrolled'); // Restore full opacity
-    }
-  });
+      const nav = document.querySelector('.sticky-nav');
+      if (window.scrollY > 550) {
+        nav.classList.add('scrolled'); // Add transparency
+      } else {
+        nav.classList.remove('scrolled'); // Restore full opacity
+      }
+    });
   </script>
+</body>
 </html>

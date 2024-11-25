@@ -399,3 +399,31 @@ footer {
   background-color: rgba(255, 255, 255, 0.564);
   border-radius: 12px;
 }
+
+.interactive-map {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+  border-radius: 16px;
+}
+
+.side-to-side-images {
+  display: flex; /* Arrange images in a row */
+  justify-content: center; /* Center the content */
+  align-items: center; /* Align images vertically in the center */
+  width: 90%; /* Match the width of .interactive-map */
+  margin: auto; /* Center the container */
+  border-radius: 16px; /* Same rounded corners as .interactive-map */
+  gap: 16px; /* Add space between images */
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.side-to-side-images img {
+  width: 45%; /* Ensure both images take up the same width */
+  height: 100%; /* Allow the height to adjust proportionally */
+  object-fit: fill; /* Ensure images fit within the container */
+  border-radius: 8px; /* Optional: Add rounded corners for aesthetics */
+}
+
