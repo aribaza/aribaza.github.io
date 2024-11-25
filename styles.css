@@ -83,7 +83,10 @@ header p {
 }
 @media (max-width: 450px) {
   .nav a {
-    font-size: 0.8 rem; /* Reduce font size for smaller screens */
+    font-size: 0.7 rem; /* Reduce font size for smaller screens */
+  }
+  .sticky-nav{
+    padding: 0.5rem 2px;
   }
 }
 
